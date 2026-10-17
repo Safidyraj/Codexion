@@ -6,7 +6,7 @@
 /*   By: safiraja <safiraja@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 09:39:16 by safiraja          #+#    #+#             */
-/*   Updated: 2026/09/22 09:12:11 by safiraja         ###   ########.fr       */
+/*   Updated: 2026/10/17 15:42:30 by safiraja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ static int	init_one_dongle(t_dongle *d)
 {
 	d->is_taken = 0;
 	d->available_at = 0;
+	d->next_ticket = 0;
 	d->queue.size = 0;
+	d->queue.cap = 2;
 	d->queue.data = malloc(sizeof(t_req) * 2);
 	if (!d->queue.data)
 		return (-1);

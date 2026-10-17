@@ -1,10 +1,11 @@
 NAME = codexion
 
-SRC = parse_args.c ft_atoi_strict.c main.c time.c
+SRC = main.c parse_args.c ft_atoi_strict.c time.c init.c cleanup.c \
+	heap.c heap_pop.c log.c dongle.c coder.c monitor.c simulation.c
 
 CC =  cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -pthread
 
 HEADER = codexion.h
 
@@ -22,9 +23,9 @@ $(NAME): $(OBJS)
 clean:
 	rm -f $(OBJS)
 
-fclean:clean
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re
